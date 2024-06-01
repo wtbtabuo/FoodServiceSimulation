@@ -5,17 +5,19 @@ namespace Invoices;
 class Invoice {
     private float $amount;
     private \DateTime $date;
-    private int $orderNumber;
+    private int $estimatedTimeMinutes;
 
-    public function __construct(float $amount, \DateTime $date, int $orderNumber) {
+    public function __construct(float $amount, \DateTime $date, int $estimatedTimeMinutes) {
         $this->amount = $amount;
         $this->date = $date;
-        $this->orderNumber = $orderNumber;
+        $this->estimatedTimeMinutes = $estimatedTimeMinutes;
+
     }
 
     public function printInvoice() {
-        echo "Invoice for order number: {$this->orderNumber}\n";
-        echo "Amount: \${$this->amount}\n";
-        echo "Date: " . $this->date->format('Y-m-d') . "\n";
+        echo "--------------------------------\n";
+        echo "Final Price: \${$this->amount}\n";
+        echo "Date: " . $this->date->format('Y-m-d H:i:s') . "\n";
+        echo "--------------------------------\n";
     }
 }

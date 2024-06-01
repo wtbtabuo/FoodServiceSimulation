@@ -10,4 +10,12 @@ class Chef extends Employee {
         echo "Preparing food order...";
     }
 
+    public function getJobName(): string {
+        return "Chef";
+    }
+
+    public function getName(): string {
+        return $this->name;
+    }
+
 }

@@ -14,12 +14,11 @@ class Restaurant {
         return $this->menu;
     }
 
-    public function order(array $categories) {
-        // 注文処理のロジック
-        return new \Invoice(200.0, new \DateTime(), 45);  // assuming Invoice is in the global namespace
+    public function getEmployees(): array {
+        return $this->employees;
     }
 
-    public function getOrder() {
-        // 注文取得のロジック
+    public function order(array $categories) {
+        return new \Invoices\Invoice(200.0, new \DateTime(), 45, rand(1000, 9999));  
     }
 }

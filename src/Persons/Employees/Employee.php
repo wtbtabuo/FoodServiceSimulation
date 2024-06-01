@@ -13,4 +13,8 @@ class Employee extends \Persons\Person {
         $this->employeeId = $employeeId;
         $this->salary = $salary;
     }
+
+    public function getName() {
+        return $this->name;
+    }
 }

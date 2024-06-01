@@ -8,7 +8,6 @@ class Cashier extends Employee {
     }
 
     public function generateOrder(array $categories, Restaurant $restaurant): FoodOrder {
-        // 仮の実装：指定されたカテゴリーの食べ物アイテムを注文に追加するロジック
         $items = [];
         foreach ($restaurant->getMenu() as $item) {
             if (in_array($item->getCategory(), $categories)) {
@@ -19,12 +18,15 @@ class Cashier extends Employee {
     }
 
     public function generateInvoice(FoodOrder $order): Invoice {
-        // 仮の実装：注文に基づいて請求書を生成するロジック
         $totalPrice = 0;
         foreach ($order->getItems() as $item) {
             $totalPrice += $item->getPrice();
         }
         return new Invoice($totalPrice, $order->getOrderTime(), count($order->getItems()) * 5);
+    }
+
+    public function getJobName(): string {
+        return "Cashier";
     }
 
 }

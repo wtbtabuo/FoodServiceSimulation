@@ -7,7 +7,7 @@ class CheeseBurger {
     private $price;
 
     public function __construct() {
-        $this->name = "Cheeseburger";
+        $this->name = "CheeseBurger";
         $this->price = 5.00; // 価格は適当に設定しています
     }
 
